@@ -1,0 +1,45 @@
+@import '../styles/global';
+
+.article-box {
+  margin-bottom: 30px;
+  border-bottom: 1px dotted $color-pallete-6;
+  display: inline-block;
+  width: $container-width;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 0 0 0 $color-pallete-4;
+
+    &:hover {
+      cursor: pointer;
+
+      @media screen and (min-width: 960px) {
+        box-shadow: inset $site-width 0 0 0 $color-pallete-7;
+      }
+
+    }
+
+    .left {
+      float: left;
+      width: 150px;
+      height: 160px;
+      background-color: $color-pallete-5;
+    }
+
+    .right {
+      margin-left: 150px;
+      padding: 15px;
+      color: $color-pallete-3;
+      margin-top: -20px;
+
+        .date {
+          margin-top: -15px;
+          margin-bottom: 20px;
+          font-size: 12px;
+        }
+    
+        h3 {
+          color: $color-pallete-3;
+        }
+
+    }
+
+}
