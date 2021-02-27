@@ -5,7 +5,7 @@ import Article from '../components/article'
 export default () => (
    <StaticQuery
 
-      query = { graphql `query {
+      query={graphql`query {
          allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
            totalCount
            edges {
@@ -28,7 +28,7 @@ export default () => (
 
       }
 
-      render = { data => (
+      render={data => (
          <div>
             {data.allMarkdownRemark.edges.map(({ node }) => (
                <Article id={node.id}

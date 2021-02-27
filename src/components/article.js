@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from 'gatsby'
-import styles from  './article.module.scss'
+import { Link } from 'gatsby'
+import styles from './article.module.scss'
 
 export default (props) => (
 

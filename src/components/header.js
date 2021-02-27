@@ -32,7 +32,7 @@ const SocialButton = (props) => {
     style = styles.buttonGithub;
     url = 'https://www.github.com/' + props.username;
   }
-  
+
   return (
     <a href={url} target='_blank' rel='noopener noreferrer'>
       <div className={style}>{props.children}&nbsp;</div>
@@ -45,7 +45,7 @@ export default () => (
 
   <StaticQuery
 
-    query = {graphql `
+    query={graphql`
       query {
         site {
           siteMetadata {
@@ -55,7 +55,7 @@ export default () => (
       }
   `}
 
-    render = { data => (
+    render={data => (
 
       <header className={styles.container}>
 
