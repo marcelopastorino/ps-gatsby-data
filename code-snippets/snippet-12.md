@@ -1,0 +1,1 @@
+<img src={props.imageUrl} alt={props.title} width="150px" height="160px" />

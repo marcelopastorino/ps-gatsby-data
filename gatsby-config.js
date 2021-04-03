@@ -7,15 +7,17 @@ module.exports = {
     plugins: [
         'gatsby-plugin-sass',
 
+        'gatsby-transformer-remark',
+
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve: 'gatsby-source-wordpress',
             options: {
-                name: 'files',
-                path: `${__dirname}/src/markdown`,
-            },
+                url: 'http://157.230.19.196/graphql'
+            }
         },
 
-        'gatsby-transformer-remark'
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-sharp'
 
     ]
 

@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "gatsby": "^2.32.3",
+    "gatsby-image": "^2.11.0",
     "gatsby-plugin-sass": "^2.8.0",
+    "gatsby-plugin-sharp": "^2.14.3",
     "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-source-wordpress": "^4.0.3",
     "gatsby-transformer-remark": "^2.16.0",
+    "gatsby-transformer-sharp": "^2.12.0",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"

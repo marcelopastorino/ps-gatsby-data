@@ -1,0 +1,1 @@
+const image = data.allWpPost.nodes[0].featuredImage.node.localFile.childImageSharp.fluid

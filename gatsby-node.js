@@ -1,17 +1,4 @@
-const { createFilePath } = require('gatsby-source-filesystem')
 const path = require('path')
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-   if (node.internal.type === 'MarkdownRemark') {
-      const { createNodeField } = actions
-      const slug = createFilePath({ node, getNode, basePath: 'markdown' })
-      createNodeField({
-         node,
-         name: 'slug',
-         value: slug,
-      })
-   }
-}
 
 // Create post pages programmatically
 exports.createPages = ({ graphql, actions }) => {
@@ -20,23 +7,19 @@ exports.createPages = ({ graphql, actions }) => {
    return new Promise(resolve => {
       graphql(`
       {
-         allMarkdownRemark {
-            edges {
-               node {
-                  fields {
-                     slug
-                  }
-               }
+         allWpPost(sort: {fields: [date]}) {
+            nodes {
+              slug
             }
-         }
+          }
       }`
       ).then(result => {
-         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+         result.data.allWpPost.nodes.forEach((node) => {
             createPage({
-               path: node.fields.slug,
+               path: node.slug,
                component: path.resolve('./src/templates/post.js'),
                context: {
-                  slug: node.fields.slug,
+                  slug: node.slug,
                },
             })
          })

@@ -1,0 +1,1 @@
+<Img fluid={image} key={image.src} />

@@ -1,0 +1,1 @@
+const post = data.allWpPost.nodes[0]

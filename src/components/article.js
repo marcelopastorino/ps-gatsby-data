@@ -7,7 +7,7 @@ export default (props) => (
    <Link to={props.to}>
       <article className={styles.articleBox} key={props.id}>
          <div className={styles.left}>
-            <img src={'https://source.unsplash.com/150x160/?' + props.keywords} alt={props.title} />
+            <img src={props.imageUrl} alt={props.title} width="150px" height="160px" />
          </div>
          <div className={styles.right}>
             <h3>
@@ -16,7 +16,7 @@ export default (props) => (
             <div className={styles.date}>{props.date}
             </div>
             <div>
-               {props.excerpt}
+               <div dangerouslySetInnerHTML={{ __html: props.excerpt }} />
             </div>
          </div>
       </article>

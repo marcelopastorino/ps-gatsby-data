@@ -6,37 +6,40 @@ export default () => (
    <StaticQuery
 
       query={graphql`query {
-         allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
-           totalCount
-           edges {
-             node {
-               fields {
-                  slug
-               }
-               id
-               frontmatter {
-                 title
-                 image
-                 keywords
-                 date(formatString: "MMMM YYYY")
-               }
-               excerpt
-             }
-           }
-         }
+         allWpPost(sort: {fields: [date]}) {
+            totalCount
+            nodes {
+              id
+              title
+              slug
+              date(formatString: "MMMM DD, YYYY")
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+              categories {
+                nodes {
+                  name
+                }
+              }
+              excerpt
+            }
+          }
        }`
 
       }
 
       render={data => (
          <div>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
+            {data.allWpPost.nodes.map((node) => (
                <Article id={node.id}
-                  to={node.fields.slug}
-                  keywords={node.frontmatter.keywords}
-                  title={node.frontmatter.title}
-                  date={node.frontmatter.date}
-                  excerpt={node.excerpt} />
+                  to={node.slug}
+                  keywords={node.categories.nodes.name}
+                  title={node.title}
+                  date={node.date}
+                  excerpt={node.excerpt} 
+                  imageUrl={node.featuredImage.node.sourceUrl} />
             ))}
          </div>
       )}
