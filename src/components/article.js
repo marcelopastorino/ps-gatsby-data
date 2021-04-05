@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styles from './article.module.scss'
+import Img from 'gatsby-image'
 
 export default (props) => (
 
    <Link to={props.to}>
       <article className={styles.articleBox} key={props.id}>
          <div className={styles.left}>
-            <img src={props.imageUrl} alt={props.title} width="150px" height="160px" />
+            <Img fluid={props.image} key={props.image.src}/>
          </div>
          <div className={styles.right}>
             <h3>

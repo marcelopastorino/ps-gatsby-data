@@ -68,6 +68,7 @@ export default () => (
 
         <div className={styles.row}>
           <HeaderLink to='/' text='ARTICLES' />
+          <HeaderLink to='/presentations' text='PRESENTATIONS' />
           <HeaderLink to='/about' text='ABOUT' />
         </div>
 

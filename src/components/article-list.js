@@ -15,7 +15,18 @@ export default () => (
               date(formatString: "MMMM DD, YYYY")
               featuredImage {
                 node {
-                  sourceUrl
+                  localFile {
+                     childImageSharp {
+                       fixed(jpegProgressive: true, width: 160, height: 160) {
+                         base64
+                         tracedSVG
+                         aspectRatio
+                         srcWebp
+                         srcSetWebp
+                         originalName
+                       }
+                     }
+                   }
                 }
               }
               categories {
@@ -39,7 +50,7 @@ export default () => (
                   title={node.title}
                   date={node.date}
                   excerpt={node.excerpt} 
-                  imageUrl={node.featuredImage.node.sourceUrl} />
+                  image={node.featuredImage.node.localFile.childImageSharp.fixed} />
             ))}
          </div>
       )}
