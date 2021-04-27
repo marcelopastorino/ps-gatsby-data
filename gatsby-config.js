@@ -1,3 +1,7 @@
+const dotenv = require('dotenv')
+dotenv.config()
+const { githubApiQuery } = require('./github-api-query')
+
 module.exports = {
 
     siteMetadata: {
@@ -27,7 +31,19 @@ module.exports = {
         },
 
         'gatsby-transformer-sharp',
-        'gatsby-plugin-sharp'
+        'gatsby-plugin-sharp',
+
+        {
+            resolve: 'gatsby-source-github-api',
+            options: {
+              token: process.env.GITHUB_PAT,
+              graphQLQuery: githubApiQuery,
+              variables: {
+                query: 'is:public user:pluralsight language:javascript',
+                first: 50
+              }
+            }
+          }
 
     ]
 
