@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import Title from '../components/title'
 import styles from './repositories.module.scss';
+import Stars from '../components/stars'
 
 export default ({ data }) => (
     <Layout>
@@ -10,7 +11,7 @@ export default ({ data }) => (
             {data.allGithubData.edges[0].node.data.search.edges.map(({ node }) => (
                 <div className={styles.repository}>
                     <div className={styles.name}><a href={node.url}>pluralsight\{node.name}</a>
-                        <span className={styles.stars}> ( has {node.stargazerCount} stars )</span>
+                    <Stars className={styles.stars} repoName={node.name} />
                     </div>
                     <div className={styles.description}>{node.description}</div>
                 </div>
