@@ -1,0 +1,1 @@
+const { githubApiQuery } = require('./github-api-query')

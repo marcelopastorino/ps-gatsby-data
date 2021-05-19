@@ -1,0 +1,1 @@
+<Img fluid={props.image} key={props.image.src}/>

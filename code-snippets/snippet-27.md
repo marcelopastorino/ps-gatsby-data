@@ -1,0 +1,1 @@
+image={node.featuredImage.node.localFile.childImageSharp.fixed}
