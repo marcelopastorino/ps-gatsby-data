@@ -1,6 +1,13 @@
 # Consuming Data with GatsbyJS Repository
 
-Source code for Consuming Data with GatsbyJS Pluralsight Course by Marcelo Pastorino.
+Source code for Consuming Data with GatsbyJS Pluralsight Course.
+
+## Modules and braches.
+
+* For module 2 - modules/1 branch
+* For module 3 - modules/2 branch
+* For module 4 - modules/3 branch
+* For module 5 - modules/4 branch
 
 ## Code Snippets
 
@@ -177,3 +184,4 @@ const image = data.allWpPost.nodes[0].featuredImage.node.localFile.childImageSha
 ```javscript
 <Img fluid={image} key={image.src} />
 ```
+For other snippets see the ```code-snippets``` folder.
